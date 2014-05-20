@@ -7,4 +7,15 @@
 	<%= link_to "Приєднатися", signup_path, class: "btn btn-large btn-primary" %>
 </div>
 
+<% @books.each do |book| %>
+	<div>
+		<%= image_tag(book.image_url) %>
+		<h3><%= book.title %></h3>
+		<%= sanitize(book.description) %>
+		<div class="book_url">
+			<%= link_to "Читати","/uploads/#{book.book_url}", :target => "_blank"%>
+		</div>
+	</div>
+<% end %>
+
 

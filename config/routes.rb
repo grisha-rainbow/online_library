@@ -1,4 +1,6 @@
 WebLibrary::Application.routes.draw do
+  resources :books
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#home'
